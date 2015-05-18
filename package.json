@@ -1,6 +1,6 @@
 {
   "name": "keykey",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Create a key<->value mirror. Useful for contants. Inspired by keymirror in Flux.",
   "main": "index.js",
   "scripts": {
@@ -29,5 +29,8 @@
   "devDependencies": {
     "chai": "^2.0.0",
     "mocha": "^2.1.0"
+  },
+  "dependencies": {
+    "lru-cache": "^2.6.3"
   }
 }

@@ -31,9 +31,6 @@
   // Prohibit use of a variable before it is defined.
   "latedef": true,
 
-  // Enforce line length to 80 characters
-  "maxlen": 100,
-
   // Require capitalized names for constructor functions.
   "newcap": true,
 
@@ -49,6 +46,7 @@
    */
 
   // Suppress warnings about == null comparisons.
+  "asi": true,
   "eqnull": true,
   "expr": true
 }
