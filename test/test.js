@@ -1,60 +1,100 @@
-describe('keykey', function(){
-  var expect = require('chai').expect;
-  var keykey = require('../');
+// jscs:disable disallowQuotedKeysInObjects
 
-  it('should throw when what\'s passed is not an array', function(){
-    [null, '', 1, {}].forEach(function(nonArray){
-      expect(function(){
-        keykey(nonArray);
-      }).to.throw(TypeError);
-    });
-  });
+describe('keykey', function () {
+  const expect = require('chai').expect
+  const keykey = require('../')
 
-  it('should return a mirror when what\'s passed is an array', function(){
+  // For time trial in last test
+  var times = {}
+  var lastTime = 0
+
+  after(function () {
+    console.log('Cached: ', times.cached, ' Uncached: ', times.firstRun)
+  })
+
+  it('should throw when passed a single non-array argument', function () {
+    [null, '', 1, {}].forEach(function (nonArray) {
+      expect(function () {
+        keykey(nonArray)
+      }).to.throw(TypeError)
+    })
+  })
+
+  it('should use the final argument for a cache decision if boolean', function () {
+    expect(keykey(null, '', 1, {}, false)).to.eql({
+      'null'            : null,
+      ''                : '',
+      '1'               : 1,
+      '[object Object]' : {}
+    })
+    expect(keykey(null, '', 1, {}, true)).to.eql({
+      'null'            : null,
+      ''                : '',
+      '1'               : 1,
+      '[object Object]' : {}
+    })
+  })
+
+  it('should use booleans for keys if not in the final argument position', function () {
+    expect(keykey(null, '', 1, true, {})).to.eql({
+      'null'            : null,
+      ''                : '',
+      '1'               : 1,
+      'true'            : true,
+      '[object Object]' : {}
+    })
+  })
+
+
+  it('should return a mirror when what\'s passed is an array', function () {
     expect(keykey([null, '', 1, {}])).to.eql({
-      'null': null,
-      '': '',
-      '1': 1,
-      '[object Object]': {}
-    });
-  });
+      'null'            : null,
+      ''                : '',
+      '1'               : 1,
+      '[object Object]' : {}
+    })
+  })
 
-  it('should have a reset function', function(){
+  it('should have a reset function', function () {
     expect(keykey.reset).to.be.a.function
   })
 
-  it('should be faster on the second retrieval', function(){
-    var arrayOfKeys,
-        times = {},
-        lastTime = 0
-
-    function start() {
+  it('should be faster on the second retrieval', function () {
+    function start () {
         lastTime = process.hrtime()
     }
 
-    function getElapsedTime(key){
+    function getElapsedTime (key) {
       times[key] = times[key] || 0
 
       // 3 decimal places
-      var precision = 3;
+      const precision = 3
       // divide by a million to get nano to milli
-      var elapsed = process.hrtime(lastTime)[1] / 1000000;
+      const elapsed = process.hrtime(lastTime)[1] / 1000000
       // print message + time
 
-      times[key] += elapsed.toFixed(precision)
+      times[key] += parseFloat(elapsed.toFixed(precision))
       return times[key]
     }
 
-    arrayOfKeys = [null, '', 1, {}]
+    const arrays = [
+      [null, '', 7, {}],
+      [null, '', 6, {}],
+      [null, '', 5, {}],
+      [null, '', 4, {}],
+      [null, '', 3, {}],
+      [null, '', 2, {}],
+      [null, '', 1, {}]
+    ]
 
     start()
-    keykey(arrayOfKeys)
+    arrays.forEach(keykey)
     getElapsedTime('firstRun')
 
     start()
-    keykey(arrayOfKeys)
+    arrays.forEach(keykey)
     getElapsedTime('cached')
 
     expect(times.firstRun).to.be.above(times.cached)
-  });
-});
+  })
+})

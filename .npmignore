@@ -1,0 +1,4 @@
+.jshintrc
+.tern-project
+/src
+/test
