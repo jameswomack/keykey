@@ -1,6 +1,6 @@
 {
   "name": "keykey",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "description": "The JavaScript guru's KeyMirror-alternative. Functionally create constant hashes from any JavaScript object with greater performance.",
   "main": "index.js",
   "scripts": {
