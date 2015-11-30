@@ -2,8 +2,11 @@
 
 
 [![Build Status via CodeShip](https://codeship.com/projects/a2a85c50-9d3b-0132-6acc-4ef4301ddd41/status?branch=master)](https://codeship.com)
-
 [![Build Status](https://travis-ci.org/jameswomack/keykey.svg?branch=master)](https://travis-ci.org/jameswomack/keykey)
+[![bitHound Overalll Score](https://www.bithound.io/github/jameswomack/keykey/badges/score.svg)](https://www.bithound.io/github/jameswomack/keykey)
+[![bitHound Dependencies](https://www.bithound.io/github/jameswomack/keykey/badges/dependencies.svg)](https://www.bithound.io/github/jameswomack/keykey/master/dependencies/npm)
+[![bitHound Dev Dependencies](https://www.bithound.io/github/jameswomack/keykey/badges/devDependencies.svg)](https://www.bithound.io/github/jameswomack/keykey/master/dependencies/npm)
+[![bitHound Code](https://www.bithound.io/github/jameswomack/keykey/badges/code.svg)](https://www.bithound.io/github/jameswomack/keykey)
 
 
 ## The shaman's KeyMirror-alternative. 
