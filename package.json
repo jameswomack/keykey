@@ -25,7 +25,7 @@
     "values"
   ],
   "author": "James J. Womack",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/jameswomack/keykey/issues"
   },
@@ -37,6 +37,6 @@
     "mocha": "2.3.4"
   },
   "dependencies": {
-    "lru-cache": "2.7.0"
+    "lru-cache": "3.2.0"
   }
 }

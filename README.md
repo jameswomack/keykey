@@ -3,6 +3,8 @@
 
 [![Build Status via CodeShip](https://codeship.com/projects/a2a85c50-9d3b-0132-6acc-4ef4301ddd41/status?branch=master)](https://codeship.com)
 
+[![Build Status](https://travis-ci.org/jameswomack/keykey.svg?branch=master)](https://travis-ci.org/jameswomack/keykey)
+
 
 ## The shaman's KeyMirror-alternative. 
 * Create enumerations
