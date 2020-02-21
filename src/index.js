@@ -14,7 +14,7 @@ function hash (object) {
         }))
 }
 
-const cache = LRU(100)
+const cache = new LRU({ max: 100 })
 
 function validate (anArrayOfKeys) {
   const moduleOutputPrefix = '[keykey]';
