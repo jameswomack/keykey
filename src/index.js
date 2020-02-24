@@ -1,5 +1,7 @@
-import { inspect } from 'util'
-import LRU from 'lru-cache'
+'use strict';
+
+const { inspect } = require('util');
+const LRU = require('lru-cache');
 
 const WHITESPACE_X = /\s+/g
 
@@ -14,7 +16,7 @@ function hash (object) {
         }))
 }
 
-const cache = LRU(100)
+const cache = new LRU({ max: 100 });
 
 function validate (anArrayOfKeys) {
   const moduleOutputPrefix = '[keykey]';
