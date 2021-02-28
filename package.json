@@ -43,9 +43,9 @@
   "dependencies": {
     "lru-cache": "^6.0.0"
   },
-  "browserslist": "node >= 6",
+  "browserslist": "node >= 10",
   "engines": {
-    "node": ">=6"
+    "node": ">=10"
   },
   "engineStrict": true
 }
