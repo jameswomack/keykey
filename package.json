@@ -1,6 +1,6 @@
 {
   "name": "keykey",
-  "version": "3.0.0",
+  "version": "4.0.0-alpha.0",
   "description": "The JavaScript guru's KeyMirror-alternative. Functionally create constant hashes from any JavaScript object with greater performance.",
   "main": "index.js",
   "scripts": {
@@ -25,7 +25,9 @@
     "values"
   ],
   "author": "James J. Womack",
-  "contributors": ["Johan Meiring"],
+  "contributors": [
+    "Johan Meiring"
+  ],
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/jameswomack/keykey/issues"
@@ -39,10 +41,11 @@
     "mocha": "2.3.4"
   },
   "dependencies": {
-    "core-js": "^3.6.4",
-    "lru-cache": "^5.1.1"
+    "lru-cache": "^6.0.0"
   },
   "browserslist": "node >= 6",
-  "engines" : { "node" : ">=6" },
-  "engineStrict" : true
+  "engines": {
+    "node": ">=6"
+  },
+  "engineStrict": true
 }
